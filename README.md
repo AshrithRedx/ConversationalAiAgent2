@@ -34,9 +34,12 @@ python -m venv venv
 venv\Scripts\activate
 # On Mac/Linux:
 source venv/bin/activate
+
+
 3. Install dependencies
 text
 pip install -r requirements.txt
+
 4. Set up your environment variables
 Create a .env file in the project root (do NOT commit this file) with:
 
@@ -57,35 +60,4 @@ uvicorn backend:app --reload
 7. Run the frontend
 text
 streamlit run app.py
-🌐 Deployment
-Backend: Can be deployed on Fly.io, Railway, Render, etc. (set environment variables/secrets on the platform).
 
-Frontend: Deploy on Streamlit Cloud (requires GitHub repo), set secrets in the Streamlit Cloud UI.
-
-Do NOT upload your .env or service account JSON to GitHub.
-
-📝 Usage
-Open the Streamlit UI in your browser.
-
-Type natural language requests, e.g.:
-
-“Book a meeting called Project Sync tomorrow at 10am.”
-
-“Schedule a call with John next Friday from 2pm to 3pm.”
-
-The assistant will extract details, check your calendar, and book the event.
-
-🛡️ Security
-All secrets are managed via environment variables and never committed to this repo.
-
-The .gitignore file ensures sensitive files are not tracked by git.
-
-📄 License
-This project is for educational use. See LICENSE if provided.
-
-🙋‍♂️ Author
-AshrithRedx
-
-If you use this template, anyone will be able to understand, run, and deploy your project safely and quickly!
-
-Let me know if you want a more detailed or minimal version, or if you want to add screenshots or demo GIFs.
