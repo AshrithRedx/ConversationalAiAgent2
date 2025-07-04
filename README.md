@@ -21,6 +21,7 @@ text
 ├── requirements.txt    # Python dependencies
 ├── .gitignore          # Git ignore file (excludes secrets, venv, etc.)
 └── README.md           # This file
+
 ⚡ Quick Start
 1. Clone the repository
 text
@@ -34,16 +35,46 @@ python -m venv venv
 venv\Scripts\activate
 # On Mac/Linux:
 source venv/bin/activate
-
-
 3. Install dependencies
 text
 pip install -r requirements.txt
+🔑 Google API & Service Account Setup
+1. Create a Google Cloud Project and Enable Calendar API
+Go to the Google Cloud Console.
 
-4.Set Up Your .env File
-In your project root, create a file named .env (not .env.txt)68.
+Click Select a Project → New Project → Give it a name → Create.
 
-Add the following lines (replace with your actual values):
+With your project selected, go to APIs & Services → Enable APIs and Services.
+
+Search for Google Calendar API and click Enable.
+
+2. Create a Service Account and Download the Key
+Go to IAM & Admin → Service Accounts.
+
+Click Create Service Account.
+
+Name it (e.g., "calendar-bot") → Create and Continue.
+
+Grant the Editor or Service Account Token Creator role → Done.
+
+In the service account list, click your new account, go to the Keys tab, and click Add Key → Create new key → Choose JSON → Create.
+
+Download the .json key file and keep it safe—do NOT upload it to GitHub.
+
+3. Share Your Google Calendar with the Service Account
+Go to Google Calendar.
+
+Find your calendar under "My calendars", click the three dots → Settings and sharing.
+
+Scroll to Share with specific people or groups.
+
+Add the service account’s email (from your .json file, e.g., my-bot@my-project.iam.gserviceaccount.com).
+
+Give it "Make changes to events" permission.
+
+🛠️ Configuration
+4. Set Up Your .env File
+In your project root, create a file named .env (not .env.txt):
 
 text
 GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
@@ -53,48 +84,21 @@ GOOGLE_API_KEY: Your API key from Google Cloud Console (if required by your LLM 
 
 CALENDAR_ID: Your Google Calendar email (usually your Gmail address).
 
-GOOGLE_APPLICATION_CREDENTIALS: Path to your downloaded .json service account key
+GOOGLE_APPLICATION_CREDENTIALS: Path to your downloaded .json service account key.
 
-5.  Google API & Service Account Setup
-1. Create a Google Cloud Project and Enable Calendar API
-Go to the Google Cloud Console.
+Do NOT commit your .env or .json files to GitHub.
+Make sure your .gitignore includes:
 
-Click Select a Project → New Project → Give it a name → Create.
-
-With your project selected, go to APIs & Services → Enable APIs and Services.
-
-Search for Google Calendar API and click Enable2.
-
-2. Create a Service Account and Download the Key
-In the Cloud Console, go to IAM & Admin → Service Accounts.
-
-Click Create Service Account.
-
-Give it a name (e.g., "calendar-bot") and click Create and Continue.
-
-Grant it the Editor or Service Account Token Creator role.
-
-Click Done.
-
-In the service account list, click your new account, go to the Keys tab, and click Add Key → Create new key → Choose JSON → Create.
-
-Download the .json key file and keep it safe—do NOT upload it to GitHub4.
-
-3. Share Your Google Calendar with the Service Account
-Visit Google Calendar.
-
-Find your calendar under "My calendars", click the three dots → Settings and sharing.
-
-Scroll to Share with specific people or groups.
-
-Add the service account’s email (found in your .json file, e.g., my-bot@my-project.iam.gserviceaccount.com).
-
-Give it "Make changes to events" permission3.
-
-6. Run the backend
+text
+.env
+*.json
+venv/
+__pycache__/
+▶️ Running the Project
+5. Run the backend
 text
 uvicorn backend:app --reload
-7. Run the frontend
+6. Run the frontend
 text
 streamlit run app.py
 
