@@ -61,3 +61,13 @@ uvicorn backend:app --reload
 text
 streamlit run app.py
 
+## 📸 Screenshots
+
+### Frontend (Streamlit)
+![Frontend Screenshot](/frontend.png)
+
+### Backend (FastAPI)
+![Backend Screenshot](/backend.png)
+ 
+
+
