@@ -1,6 +1,8 @@
 import streamlit as st
 import requests
 import uuid
+backend_url = st.secrets.get("BACKEND_URL", "http://localhost:8000")
+
 
 st.set_page_config(
     page_title="Conversational AI Assistant",
@@ -117,9 +119,10 @@ if prompt := st.chat_input("Type your message and press Enter..."):
     # Call backend
     try:
         response = requests.post(
-            "http://localhost:8000/chat",
+            f"{backend_url}/chat",
             json={"session_id": st.session_state["session_id"], "message": prompt}
-        )
+    )
+
         bot_reply = response.json().get("reply", "No reply received.")
     except Exception as e:
         bot_reply = f"Error: {e}"
