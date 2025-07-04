@@ -23,11 +23,11 @@ text
 └── README.md           # This file
 
 ⚡ Quick Start
-1. Clone the repository
+## 1. Clone the repository
 text
 git clone https://github.com/AshrithRedx/ConversationalAiAgent2.git
 cd ConversationalAiAgent2
-2. Set up your environment
+## 2. Set up your environment
 text
 python -m venv venv
 # Activate the venv:
@@ -35,11 +35,11 @@ python -m venv venv
 venv\Scripts\activate
 # On Mac/Linux:
 source venv/bin/activate
-3. Install dependencies
+## 3. Install dependencies
 text
 pip install -r requirements.txt
-🔑 Google API & Service Account Setup
-1. Create a Google Cloud Project and Enable Calendar API
+ ### 🔑 Google API & Service Account Setup
+#### 1. Create a Google Cloud Project and Enable Calendar API
 Go to the Google Cloud Console.
 
 Click Select a Project → New Project → Give it a name → Create.
@@ -48,7 +48,7 @@ With your project selected, go to APIs & Services → Enable APIs and Services.
 
 Search for Google Calendar API and click Enable.
 
-2. Create a Service Account and Download the Key
+#### 2. Create a Service Account and Download the Key
 Go to IAM & Admin → Service Accounts.
 
 Click Create Service Account.
@@ -61,7 +61,7 @@ In the service account list, click your new account, go to the Keys tab, and cli
 
 Download the .json key file and keep it safe—do NOT upload it to GitHub.
 
-3. Share Your Google Calendar with the Service Account
+#### 3. Share Your Google Calendar with the Service Account
 Go to Google Calendar.
 
 Find your calendar under "My calendars", click the three dots → Settings and sharing.
@@ -72,8 +72,8 @@ Add the service account’s email (from your .json file, e.g., my-bot@my-project
 
 Give it "Make changes to events" permission.
 
-🛠️ Configuration
-4. Set Up Your .env File
+ ## 🛠️ Configuration
+ ## 4. Set Up Your .env File
 In your project root, create a file named .env (not .env.txt):
 
 text
@@ -95,10 +95,10 @@ text
 venv/
 __pycache__/
 ▶️ Running the Project
-5. Run the backend
+## 5. Run the backend
 text
 uvicorn backend:app --reload
-6. Run the frontend
+## 6. Run the frontend
 text
 streamlit run app.py
 
