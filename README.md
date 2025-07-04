@@ -72,12 +72,10 @@ pip install -r requirements.txt
  ## 🛠️ Configuration
  ## 4. Set Up Your .env File
 - In your project root, create a file named .env (not .env.txt):
-
-
-GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
-CALENDAR_ID=your-calendar@gmail.com
-GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service-account.json
-GOOGLE_API_KEY: Your API key from Google Cloud Console (if required by your LLM integration).
+ - GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+ - CALENDAR_ID=your-calendar@gmail.com
+ - GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service-account.json
+ - GOOGLE_API_KEY: Your API key from Google Cloud Console (if required by your LLM integration).
 
 - CALENDAR_ID: Your Google Calendar email (usually your Gmail address).
 
