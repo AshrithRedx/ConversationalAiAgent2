@@ -40,19 +40,56 @@ source venv/bin/activate
 text
 pip install -r requirements.txt
 
-4. Set up your environment variables
-Create a .env file in the project root (do NOT commit this file) with:
+4.Set Up Your .env File
+In your project root, create a file named .env (not .env.txt)68.
+
+Add the following lines (replace with your actual values):
 
 text
-GOOGLE_API_KEY=your-google-api-key
-CALENDAR_ID=your-calendar-id@gmail.com
+GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+CALENDAR_ID=your-calendar@gmail.com
 GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service-account.json
-Make sure your service account JSON file is not tracked by git.
+GOOGLE_API_KEY: Your API key from Google Cloud Console (if required by your LLM integration).
 
-5. Share your Google Calendar with your service account
-Go to Google Calendar → Settings & sharing → Share with specific people.
+CALENDAR_ID: Your Google Calendar email (usually your Gmail address).
 
-Add your service account email (from the JSON file) with "Make changes to events" permission.
+GOOGLE_APPLICATION_CREDENTIALS: Path to your downloaded .json service account key
+
+5.  Google API & Service Account Setup
+1. Create a Google Cloud Project and Enable Calendar API
+Go to the Google Cloud Console.
+
+Click Select a Project → New Project → Give it a name → Create.
+
+With your project selected, go to APIs & Services → Enable APIs and Services.
+
+Search for Google Calendar API and click Enable2.
+
+2. Create a Service Account and Download the Key
+In the Cloud Console, go to IAM & Admin → Service Accounts.
+
+Click Create Service Account.
+
+Give it a name (e.g., "calendar-bot") and click Create and Continue.
+
+Grant it the Editor or Service Account Token Creator role.
+
+Click Done.
+
+In the service account list, click your new account, go to the Keys tab, and click Add Key → Create new key → Choose JSON → Create.
+
+Download the .json key file and keep it safe—do NOT upload it to GitHub4.
+
+3. Share Your Google Calendar with the Service Account
+Visit Google Calendar.
+
+Find your calendar under "My calendars", click the three dots → Settings and sharing.
+
+Scroll to Share with specific people or groups.
+
+Add the service account’s email (found in your .json file, e.g., my-bot@my-project.iam.gserviceaccount.com).
+
+Give it "Make changes to events" permission3.
 
 6. Run the backend
 text
