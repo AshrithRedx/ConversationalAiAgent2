@@ -24,11 +24,9 @@ text
 
 ⚡ Quick Start
 ## 1. Clone the repository
-text
 git clone https://github.com/AshrithRedx/ConversationalAiAgent2.git
 cd ConversationalAiAgent2
 ## 2. Set up your environment
-text
 python -m venv venv
 # Activate the venv:
 # On Windows:
@@ -36,7 +34,6 @@ venv\Scripts\activate
 # On Mac/Linux:
 source venv/bin/activate
 ## 3. Install dependencies
-text
 pip install -r requirements.txt
  ### 🔑 Google API & Service Account Setup
 #### 1. Create a Google Cloud Project and Enable Calendar API
@@ -59,7 +56,7 @@ Grant the Editor or Service Account Token Creator role → Done.
 
 In the service account list, click your new account, go to the Keys tab, and click Add Key → Create new key → Choose JSON → Create.
 
-Download the .json key file and keep it safe—do NOT upload it to GitHub.
+Download the .json key file and keep it safe—*do NOT upload it to GitHub.*
 
 #### 3. Share Your Google Calendar with the Service Account
 Go to Google Calendar.
@@ -76,7 +73,7 @@ Give it "Make changes to events" permission.
  ## 4. Set Up Your .env File
 In your project root, create a file named .env (not .env.txt):
 
-text
+
 GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
 CALENDAR_ID=your-calendar@gmail.com
 GOOGLE_APPLICATION_CREDENTIALS=path/to/your/service-account.json
@@ -89,17 +86,17 @@ GOOGLE_APPLICATION_CREDENTIALS: Path to your downloaded .json service account ke
 Do NOT commit your .env or .json files to GitHub.
 Make sure your .gitignore includes:
 
-text
+
 .env
 *.json
 venv/
 __pycache__/
 ▶️ Running the Project
 ## 5. Run the backend
-text
+
 uvicorn backend:app --reload
 ## 6. Run the frontend
-text
+
 streamlit run app.py
 
 ## 📸 Screenshots
