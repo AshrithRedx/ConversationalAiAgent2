@@ -64,10 +64,10 @@ streamlit run app.py
 ## 📸 Screenshots
 
 ### Frontend (Streamlit)
-![Frontend Screenshot](frontend.png)
+![Frontend Screenshot](sample1.png)
 
 ### Backend (FastAPI)
-![Backend Screenshot](backend.png)
+![Backend Screenshot](sample2.png)
  
 
 
